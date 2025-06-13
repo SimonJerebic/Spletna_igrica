@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>STARSHIP - The Game</title>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en">
+	<meta name="SpaceX"/>
+	<meta name="description" content="Poskusi pristati vesoljsko ladjo Starship na Mars. Pazi, da ti ne zmanjka goriva. Izogibaj se vesoljcem"/>
+
+	<meta property="og:locale" content="en_US"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="STARSHIP - The Game"/>
+	<meta property="og:site_name" content="STARSHIP - The Game"/>
+	<meta property="og:description" content="Poskusi pristati vesoljsko ladjo Starship na Mars. Pazi, da ti ne zmanjka goriva. Izogibaj se vesoljcem"/>
+	<meta property="og:image" content="./starship_on_the_pad.png/">
+	<meta itemprop="name" content="STARSHIP - The Game"/>
+	<meta itemprop="image" content="./starship_on_the_pad.png"/>
+	<meta property="og:url" content="https://vaje.gimvic.org/inf3/JerebicSE/"/>
+
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:site" content="@spacex"/>
+	<meta name="twitter:description" content="Poskusi pristati vesoljsko ladjo Starship na Mars. Pazi, da ti ne zmanjka goriva. Izogibaj se vesoljcem"/>
+	<meta name="twitter:title" content="STARSHIP - The Game"/>
+	<meta name="twitter:image" content="./starship_on_the_pad.png/">
+
+	<link href="./googlefonts.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./ui.css" media="screen">
+
+    <script src="./webfontloader.min.js"></script>
+	<script src="./phaser.min.js"></script>
+    <script src="./gsap/gsap.min.js"></script>
+    <script src="./gsap/DrawSVGPlugin.min.js"></script>
+    <script src="./gsap/Draggable.min.js"></script>
+    <script src="./gsap/CustomEase.min.js"></script>
+	<script type="module" src="./preload.js"></script>
+	<script type="module" src="./menuscene.js"></script>
+	<script type="module" src="./gamescene.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div id="interactive">
+		<div id="game">
+		<div id="game-ui">
+			<div id="power">
+				<div class="pixelborder left"></div>
+				<div class="pixelborder right"></div>
+				<div class="pixelborder top"></div>
+				<div class="pixelborder bottom"></div>
+				<div class="bar"></div>
+				<div class="limit"></div>
+			</div>
+			<div id="altitude">
+				<div class="pixelborder left"></div>
+				<div class="pixelborder right"></div>
+				<div class="pixelborder top"></div>
+				<div class="pixelborder bottom"></div>
+				<div class="marker"></div>
+				<div class="label" title="Altitude">ALT</div>
+			</div>
+			<div id="fuel">
+				<div class="pixelborder left"></div>
+				<div class="pixelborder right"></div>
+				<div class="pixelborder top"></div>
+				<div class="pixelborder bottom"></div>
+				<div class="low"></div>
+				<div class="marker"></div>
+				<div class="label" title="Fuel/LOX">PROP</div>
+			</div>
+			<div id="controls-move" class="control noselect">
+				<div class="control-container">
+					<div id="btn-move"><img src="./btn_move.png"></div>
+				</div>
+			</div>
+			<div id="btn-launch"><img src="./btn_launch.png"></div>
+			<div id="btn-raptors"><img src="./btn_fire2.png"></div>
+			<div id="btn-audio" class="btn">AUDIO<br>ON</div>
+			<div id="btn-menu" class="btn">MENU</div>
+		</div>
+		<div id="gameover" class="overlay">
+			<div class="overlay-inner">
+				<div id="gameover-title" class="value">GAME OVER</div>
+				<div id="gameover-message"></div>
+				<div id="gameover-play-again">PLAY AGAIN ?</div>
+			</div>
+		</div>
+		<div id="high-score">
+			<div class="title">HIGH SCORE</div>
+			<div id="score" class="value">0</div>
+		</div>
+		<div id="preloader" class="section">
+			<div id="preloader-inner" class="section-inner">
+				<div id="preloader-text">PRIPRAVLJANJE IGRE</div>
+				<div id="preloader-status">
+					<div id="preloader-bar"></div>
+				</div>
+				<div id="preloader-percent">0%</div>
+			</div>
+		</div>
+	</div>
+	<div id="rotate" class="section">
+		<div id="rotate-inner" class="section-inner">
+			ROTATE<br>
+			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M496-182 182-496q-23-23-23-54t23-54l174-174q23-23 54-23t54 23l314 314q23 23 23 54t-23 54L604-182q-23 23-54 23t-54-23Zm54-58 170-170-310-310-170 170 310 310ZM480 0q-99 0-186.5-37.5t-153-103Q75-206 37.5-293.5T0-480h80q0 71 24 136t66.5 117Q213-175 272-138.5T401-87L296-192l56-56L588-12q-26 6-53.5 9T480 0Zm400-480q0-71-24-136t-66.5-117Q747-785 688-821.5T559-873l105 105-56 56-236-236q26-6 53.5-9t54.5-3q99 0 186.5 37.5t153 103q65.5 65.5 103 153T960-480h-80Zm-400 0Z"/></svg><br>
+			DEVICE
+		</div>
+	</div>
+	<script type="module" src="./main.js"></script>
+</body>
+
+</html>
